@@ -1,0 +1,189 @@
+PS C:\Users\Administrator> chef-client
+[2015-05-14T02:29:55-07:00] WARN:
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+SSL validation of HTTPS requests is disabled. HTTPS connections are still
+encrypted, but chef is not able to detect forged replies or man in the middle
+attacks.
+
+To fix this issue add an entry like this to your configuration file:
+
+```
+  # Verify all HTTPS connections (recommended)
+  ssl_verify_mode :verify_peer
+
+  # OR, Verify only connections to chef-server
+  verify_api_cert true
+```
+
+To check your SSL configuration, or troubleshoot errors, you can use the
+`knife ssl check` command like so:
+
+```
+  knife ssl check -c C:\chef\client.rb
+```
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Starting Chef Client, version 11.18.12
+[2015-05-14T02:30:00-07:00] INFO: *** Chef 11.18.12 ***
+[2015-05-14T02:30:00-07:00] INFO: Chef-client pid: 3100
+[2015-05-14T02:30:14-07:00] INFO: Run List is [recipe[iis_urlrewrite]]
+[2015-05-14T02:30:14-07:00] INFO: Run List expands to [iis_urlrewrite]
+[2015-05-14T02:30:14-07:00] INFO: Starting Chef Run for wintest5
+[2015-05-14T02:30:14-07:00] INFO: Running start handlers
+[2015-05-14T02:30:14-07:00] INFO: Start handlers complete.
+resolving cookbooks for run list: ["iis_urlrewrite"]
+[2015-05-14T02:30:15-07:00] INFO: Loading cookbooks [chef_handler@1.1.6, windows@1.34.6, iis@2.1.5, iis_urlrewrite@1.0.0
+]
+Synchronizing Cookbooks:
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/metadata.json in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/attributes/default.rb in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/metadata.rb in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/providers/default.rb in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/recipes/default.rb in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/CHANGELOG.md in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/libraries/matchers.rb in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/resources/default.rb in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/README.md in the cache.
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/chef_handler/recipes/json_file.rb in the cache.
+  - chef_handler
+[2015-05-14T02:30:16-07:00] INFO: Storing updated cookbooks/windows/resources/auto_run.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/feature.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/batch.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/pagefile.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/package.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/printer.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/path.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/printer_port.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/reboot.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/registry.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/shortcut.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/task.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/resources/zipfile.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/feature_servermanagercmd.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/package.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/auto_run.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/feature_dism.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/batch.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/feature_powershell.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/pagefile.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/path.rb in the cache.
+[2015-05-14T02:30:17-07:00] INFO: Storing updated cookbooks/windows/providers/printer.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/providers/printer_port.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/providers/registry.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/providers/reboot.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/providers/shortcut.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/providers/zipfile.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/providers/task.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/feature_base.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/recipes/reboot_handler.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/recipes/default.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/matchers.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/powershell_helper.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/powershell_out.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/version.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/registry_helper.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/windows_helper.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/windows_privileged.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/wmi_helper.rb in the cache.
+[2015-05-14T02:30:18-07:00] INFO: Storing updated cookbooks/windows/libraries/windows_architecture_helper.rb in the cach
+e.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/CHANGELOG.md in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/attributes/default.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/CONTRIBUTING in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/LICENSE in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/metadata.json in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/TODO.md in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/iis/resources/module.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/iis/resources/config.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/iis/resources/pool.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/metadata.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/windows/README.md in the cache.
+  - windows
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/iis/resources/app.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/iis/resources/site.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/iis/providers/app.rb in the cache.
+[2015-05-14T02:30:19-07:00] INFO: Storing updated cookbooks/iis/providers/pool.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/providers/module.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/default.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/providers/site.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_application_initialization.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/providers/config.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_aspnet.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_auth_windows.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_auth_basic.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_cgi.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_compress_dynamic.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_ftp.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_isapi.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_iis6_metabase_compat.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_management.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_logging.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_security.rb in the cache.
+[2015-05-14T02:30:20-07:00] INFO: Storing updated cookbooks/iis/recipes/remove_default_site.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis/libraries/helper.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis/attributes/default.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis/libraries/matcher.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis/README.md in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_tracing.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/recipes/default.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/attributes/default.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/LICENSE in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/metadata.json in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/chefignore in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/README.md in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/metadata.rb in the cache.
+[2015-05-14T02:30:21-07:00] INFO: Storing updated cookbooks/iis_urlrewrite/Thorfile in the cache.
+  - iis_urlrewrite
+[2015-05-14T02:30:22-07:00] INFO: Storing updated cookbooks/iis/CHANGELOG.md in the cache.
+[2015-05-14T02:30:22-07:00] INFO: Storing updated cookbooks/iis/metadata.json in the cache.
+[2015-05-14T02:30:22-07:00] INFO: Storing updated cookbooks/iis/recipes/mod_compress_static.rb in the cache.
+[2015-05-14T02:30:23-07:00] INFO: Storing updated cookbooks/iis/metadata.rb in the cache.
+  - iis
+Compiling Cookbooks...
+[2015-05-14T02:30:23-07:00] INFO: WindowsPackage lightweight resource already initialized -- overriding!
+Converging 3 resources
+Recipe: iis::default
+  * windows_feature[IIS-WebServerRole] action install[2015-05-14T02:30:23-07:00] INFO: Processing windows_feature[IIS-We
+bServerRole] action install (iis::default line 22)
+ (up to date)
+  * service[iis] action enable[2015-05-14T02:30:25-07:00] INFO: Processing service[iis] action enable (iis::default line
+ 27)
+ (up to date)
+  * service[iis] action start[2015-05-14T02:30:25-07:00] INFO: Processing service[iis] action start (iis::default line 2
+7)
+ (up to date)
+Recipe: iis_urlrewrite::default
+  * windows_package[IIS URL Rewrite Module 2] action install[2015-05-14T02:30:25-07:00] INFO: Processing windows_package
+[IIS URL Rewrite Module 2] action install (iis_urlrewrite::default line 22)
+[2015-05-14T02:30:25-07:00] INFO: Installing windows_package[IIS URL Rewrite Module 2] version latest
+
+  Recipe: <Dynamically Defined Resource>
+    * remote_file[c:/chef/cache/rewrite_2.0_rtw_x64.msi] action create[2015-05-14T02:30:25-07:00] INFO: Processing remot
+e_file[c:/chef/cache/rewrite_2.0_rtw_x64.msi] action create (dynamically defined)
+[2015-05-14T02:30:25-07:00] INFO: remote_file[c:/chef/cache/rewrite_2.0_rtw_x64.msi] created file c:/chef/cache/rewrite_
+2.0_rtw_x64.msi
+
+      - create new file c:/chef/cache/rewrite_2.0_rtw_x64.msi[2015-05-14T02:30:27-07:00] INFO: remote_file[c:/chef/cache
+/rewrite_2.0_rtw_x64.msi] updated file contents c:/chef/cache/rewrite_2.0_rtw_x64.msi
+
+      - update content in file c:/chef/cache/rewrite_2.0_rtw_x64.msi from none to d97223
+      (new content is binary, diff output suppressed)
+[2015-05-14T02:30:27-07:00] INFO: Starting installation...this could take awhile.
+
+[2015-05-14T02:30:30-07:00] INFO: windows_package[IIS URL Rewrite Module 2] sending restart action to service[iis] (dela
+yed)
+Recipe: iis::default
+  * service[iis] action restart[2015-05-14T02:30:30-07:00] INFO: Processing service[iis] action restart (iis::default li
+ne 27)
+[2015-05-14T02:30:32-07:00] INFO: service[iis] restarted
+
+    - restart service service[iis]
+[2015-05-14T02:30:33-07:00] INFO: Chef Run complete in 19.198405 seconds
+
+Running handlers:
+[2015-05-14T02:30:33-07:00] INFO: Running report handlers
+Running handlers complete
+[2015-05-14T02:30:33-07:00] INFO: Report handlers complete
+Chef Client finished, 3/6 resources updated in 38.112754 seconds
+[2015-05-14T02:30:33-07:00] INFO: Sending resource update report (run-id: 21838ee5-28ad-4176-90cc-847547c02ef2)

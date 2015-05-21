@@ -1,0 +1,11 @@
+=begin
+string line1 = File.ReadLines("MyFile.txt").Skip(0).Take(1);
+File.open('key.txt').each do |line|
+File.readlines("filename")
+   filename = key.txt
+  $stdin.gets
+  target = open(filename, 'w')
+  line1 = $stdin.gets.chomp
+  target.write(line1)
+  target.close
+=end

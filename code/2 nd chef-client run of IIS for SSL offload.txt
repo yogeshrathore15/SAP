@@ -1,0 +1,78 @@
+PS C:\Users\Administrator> chef-client
+[2015-05-14T21:59:18-07:00] WARN:
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+SSL validation of HTTPS requests is disabled. HTTPS connections are still
+encrypted, but chef is not able to detect forged replies or man in the middle
+attacks.
+
+To fix this issue add an entry like this to your configuration file:
+
+```
+  # Verify all HTTPS connections (recommended)
+  ssl_verify_mode :verify_peer
+
+  # OR, Verify only connections to chef-server
+  verify_api_cert true
+```
+
+To check your SSL configuration, or troubleshoot errors, you can use the
+`knife ssl check` command like so:
+
+```
+  knife ssl check -c C:\chef\client.rb
+```
+
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+Starting Chef Client, version 11.18.12
+[2015-05-14T21:59:23-07:00] INFO: *** Chef 11.18.12 ***
+[2015-05-14T21:59:23-07:00] INFO: Chef-client pid: 4964
+[2015-05-14T21:59:30-07:00] INFO: Run List is [recipe[iss_ssl]]
+[2015-05-14T21:59:30-07:00] INFO: Run List expands to [iss_ssl]
+[2015-05-14T21:59:30-07:00] INFO: Starting Chef Run for wintest5
+[2015-05-14T21:59:30-07:00] INFO: Running start handlers
+[2015-05-14T21:59:30-07:00] INFO: Start handlers complete.
+resolving cookbooks for run list: ["iss_ssl"]
+[2015-05-14T21:59:30-07:00] INFO: Loading cookbooks [chef_handler@1.1.6, windows@1.34.6, iis@2.1.5, iis_urlrewrite@1.0.0
+, iss_ssl@0.1.2]
+Synchronizing Cookbooks:
+  - chef_handler
+  - windows
+  - iis
+  - iis_urlrewrite
+  - iss_ssl
+Compiling Cookbooks...
+[2015-05-14T21:59:31-07:00] INFO: WindowsPackage lightweight resource already initialized -- overriding!
+[2015-05-14T21:59:31-07:00] WARN: Cloning resource attributes for ruby_block[insert] from prior resource (CHEF-3694)
+[2015-05-14T21:59:31-07:00] WARN: Previous ruby_block[insert]: c:/chef/cache/cookbooks/iss_ssl/recipes/default.rb:12:in
+`from_file'
+[2015-05-14T21:59:31-07:00] WARN: Current  ruby_block[insert]: c:/chef/cache/cookbooks/iss_ssl/recipes/default.rb:26:in
+`from_file'
+Converging 5 resources
+Recipe: iis::default
+  * windows_feature[IIS-WebServerRole] action install[2015-05-14T21:59:31-07:00] INFO: Processing windows_feature[IIS-We
+bServerRole] action install (iis::default line 22)
+ (up to date)
+  * service[iis] action enable[2015-05-14T21:59:33-07:00] INFO: Processing service[iis] action enable (iis::default line27)
+ (up to date)
+  * service[iis] action start[2015-05-14T21:59:33-07:00] INFO: Processing service[iis] action start (iis::default line 27)
+ (up to date)
+Recipe: iis_urlrewrite::default
+  * windows_package[IIS URL Rewrite Module 2] action install[2015-05-14T21:59:33-07:00] INFO: Processing windows_package
+[IIS URL Rewrite Module 2] action install (iis_urlrewrite::default line 22)
+ (up to date)
+Recipe: iss_ssl::default
+  * ruby_block[insert] action run[2015-05-14T21:59:33-07:00] INFO: Processing ruby_block[insert] action run (iss_ssl::de
+fault line 12)
+ (skipped due to not_if)
+  * ruby_block[insert] action run[2015-05-14T21:59:33-07:00] INFO: Processing ruby_block[insert] action run (iss_ssl::de
+fault line 26)
+ (skipped due to not_if)
+[2015-05-14T21:59:34-07:00] INFO: Chef Run complete in 3.992454 seconds
+
+Running handlers:
+[2015-05-14T21:59:34-07:00] INFO: Running report handlers
+Running handlers complete
+[2015-05-14T21:59:34-07:00] INFO: Report handlers complete
+Chef Client finished, 0/4 resources updated in 15.593781 seconds
+[2015-05-14T21:59:34-07:00] INFO: Sending resource update report (run-id: a25298bd-23c0-40d3-b3bd-98eb9a71b5f0)
